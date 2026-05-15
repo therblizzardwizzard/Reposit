@@ -1,0 +1,353 @@
+:root {
+  --bg: #0e0e10;
+  --surface: #15151a;
+  --surface-2: #1c1c22;
+  --text: #e8e2d4;
+  --muted: #9a958a;
+  --rule: #2a2a31;
+  --accent: #d8c14a;
+  --accent-dim: #a8964a;
+  --danger: #c54a3b;
+  --serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --measure: 680px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-dim);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color .15s ease, text-decoration-color .15s ease;
+}
+a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+
+.container {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+.wide {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+/* ── Masthead ─────────────────────────────────────────────── */
+.masthead {
+  border-bottom: 1px solid var(--rule);
+  padding: 28px 0 22px;
+  margin-bottom: 36px;
+}
+.masthead-inner {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.brand {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.55rem;
+  letter-spacing: -.01em;
+  color: var(--text);
+  text-decoration: none;
+}
+.brand .dot { color: var(--accent); }
+.tagline {
+  display: block;
+  font-family: var(--sans);
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.nav {
+  font-family: var(--sans);
+  font-size: .82rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.nav a {
+  margin-left: 18px;
+  text-decoration: none;
+  color: var(--muted);
+}
+.nav a:hover, .nav a[aria-current="page"] { color: var(--accent); }
+
+/* ── Post list ────────────────────────────────────────────── */
+.lede {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin: 0 0 36px;
+  padding-bottom: 22px;
+  border-bottom: 1px dashed var(--rule);
+}
+
+.post-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  padding: 22px 0 26px;
+  border-bottom: 1px solid var(--rule);
+}
+.post-card:last-of-type { border-bottom: none; }
+
+.post-card.has-thumb {
+  grid-template-columns: 120px 1fr;
+  gap: 22px;
+}
+.post-card .thumb {
+  width: 120px;
+  aspect-ratio: 2/3;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  overflow: hidden;
+}
+.post-card .thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+.post-meta {
+  font-family: var(--sans);
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.post-meta .cat { color: var(--accent); }
+.post-meta .sep { color: var(--rule); margin: 0 8px; }
+
+.post-card h2 {
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  line-height: 1.2;
+  margin: 6px 0 8px;
+  letter-spacing: -.01em;
+}
+.post-card h2 a { text-decoration: none; }
+.post-card .dek {
+  color: var(--muted);
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* ── Article ──────────────────────────────────────────────── */
+.article-header {
+  margin-bottom: 30px;
+  padding-bottom: 22px;
+  border-bottom: 1px dashed var(--rule);
+}
+.article-header h1 {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  line-height: 1.15;
+  letter-spacing: -.015em;
+  margin: 10px 0 12px;
+}
+.article-header .dek {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 1.1rem;
+  margin: 0;
+}
+.byline {
+  font-family: var(--sans);
+  font-size: .78rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 18px;
+}
+.byline .author { color: var(--text); }
+
+.hero {
+  margin: 28px 0 6px;
+  border: 1px solid var(--rule);
+  background: var(--surface);
+}
+.hero img { width: 100%; }
+.hero-caption {
+  font-family: var(--sans);
+  font-size: .78rem;
+  color: var(--muted);
+  text-align: center;
+  margin: 8px 0 28px;
+}
+
+article p { margin: 0 0 1.1em; }
+article h2 {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  margin: 2em 0 .5em;
+  letter-spacing: -.01em;
+}
+article blockquote {
+  margin: 1.4em 0;
+  padding: .2em 0 .2em 18px;
+  border-left: 3px solid var(--accent);
+  color: var(--text);
+  font-style: italic;
+  font-size: 1.05rem;
+}
+article hr {
+  border: 0;
+  border-top: 1px dashed var(--rule);
+  margin: 2em 0;
+}
+.content-warning {
+  font-family: var(--sans);
+  font-size: .82rem;
+  background: var(--surface);
+  border-left: 3px solid var(--danger);
+  padding: 12px 14px;
+  color: var(--muted);
+  margin: 0 0 28px;
+}
+.content-warning strong { color: var(--text); letter-spacing: .04em; }
+
+/* ── IG embed card ────────────────────────────────────────── */
+.ig-card {
+  margin: 36px 0 0;
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+}
+.ig-card .ig-head {
+  font-family: var(--sans);
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.ig-card .ig-fallback {
+  font-family: var(--sans);
+  font-size: .9rem;
+  color: var(--muted);
+}
+.ig-card .ig-fallback a { color: var(--accent); }
+
+/* ── Comments ─────────────────────────────────────────────── */
+.comments {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+}
+.comments h3 {
+  font-family: var(--sans);
+  font-size: .78rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+.comments-placeholder {
+  font-family: var(--sans);
+  font-size: .88rem;
+  color: var(--muted);
+  padding: 18px;
+  background: var(--surface);
+  border: 1px dashed var(--rule);
+}
+.comments-placeholder code {
+  background: var(--surface-2);
+  padding: 1px 6px;
+  font-size: .82rem;
+}
+
+/* ── Footer + newsletter ─────────────────────────────────── */
+.site-footer {
+  margin-top: 80px;
+  padding: 36px 0 28px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: .82rem;
+  color: var(--muted);
+}
+.newsletter {
+  margin: 0 0 24px;
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+}
+.newsletter h4 {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--text);
+  margin: 0 0 4px;
+}
+.newsletter p { margin: 0 0 12px; color: var(--muted); }
+.newsletter form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.newsletter input[type="email"] {
+  flex: 1 1 220px;
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: .92rem;
+  padding: 10px 12px;
+  outline: none;
+}
+.newsletter input[type="email"]:focus { border-color: var(--accent); }
+.newsletter button {
+  background: var(--accent);
+  color: #1a1605;
+  border: 0;
+  font-family: var(--sans);
+  font-size: .78rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+.newsletter button:hover { background: #ead46a; }
+.newsletter .thanks { color: var(--accent); font-family: var(--sans); font-size: .9rem; }
+
+.disclaimer {
+  font-style: italic;
+  color: var(--muted);
+  margin-top: 18px;
+  font-family: var(--serif);
+  font-size: .9rem;
+}
+
+/* ── Utility / responsive ─────────────────────────────────── */
+@media (max-width: 540px) {
+  body { font-size: 17px; }
+  .masthead-inner { flex-direction: column; align-items: flex-start; }
+  .nav a { margin: 0 16px 0 0; }
+  .post-card.has-thumb { grid-template-columns: 1fr; }
+  .post-card.has-thumb .thumb { width: 100%; max-width: 220px; aspect-ratio: 2/3; }
+  .article-header h1 { font-size: 1.7rem; }
+}
+
+::selection { background: var(--accent); color: #1a1605; }
