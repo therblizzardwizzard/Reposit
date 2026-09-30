@@ -549,6 +549,32 @@ article hr {
 }
 .link-row a { margin-right: 4px; }
 
+/* ── Poster comparison ────────────────────────────────────── */
+.poster-compare {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin: 26px 0 8px;
+  justify-items: center;
+}
+.poster-compare figure {
+  margin: 0;
+  width: 100%;
+  max-width: 260px;
+}
+.poster-compare img {
+  width: 100%;
+  border: 1px solid var(--rule);
+  background: var(--surface);
+}
+.poster-compare figcaption {
+  font-family: var(--sans);
+  font-size: .76rem;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 8px;
+}
+
 /* ── Interactive timeline ─────────────────────────────────── */
 .timeline {
   position: relative;
@@ -651,6 +677,7 @@ article hr {
   .t-entry summary { flex-direction: column; gap: 4px; padding-left: 20px; }
   .t-entry summary::before { left: -24px; }
   .now-live { flex-direction: column; align-items: flex-start; }
+  .poster-compare { grid-template-columns: 1fr; }
   .credits-table td:first-child { width: auto; display: block; padding-bottom: 2px; }
   .credits-table td:last-child { display: block; padding-top: 0; }
   .credits-table tr { display: block; padding: 10px 0; }
