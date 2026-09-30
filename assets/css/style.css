@@ -153,6 +153,31 @@ a:hover { color: var(--accent); text-decoration-color: var(--accent); }
   font-size: 1rem;
 }
 
+.post-card.is-note {
+  border-bottom-style: dashed;
+  padding: 16px 0 18px;
+}
+.post-card.is-note .post-meta .cat { color: var(--danger); }
+.post-card.is-note h2 { font-size: 1.22rem; }
+
+/* ── Field note (short-form post) ────────────────────────────*/
+.note-body {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+}
+.note-body p { margin: 0 0 1.1em; }
+.note-tag {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: .68rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  padding: 3px 9px;
+  margin-bottom: 18px;
+}
+
 /* ── Article ──────────────────────────────────────────────── */
 .article-header {
   margin-bottom: 30px;
